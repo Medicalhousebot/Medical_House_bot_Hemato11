@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>درسنامه تعاملی هماتولوژی - سیستم هماتوپوئیتیک و خون‌سازی</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap');
+
+    :root {
+      --primary:    #1a237e;
+      --secondary:  #283593;
+      --accent1:    #0277bd;
+      --accent2:    #00838f;
+      --accent3:    #6a1b9a;
+      --accent4:    #ad1457;
+      --accent5:    #e65100;
+      --bg:         #f0f4ff;
+      --card:       #ffffff;
+      --text:       #1a1a2e;
+      --muted:      #546e7a;
+      --border:     #c5cae9;
+      --green:      #1b5e20;
+      --greenlight: #e8f5e9;
+      --redlight:   #ffebee;
+      --red:        #b71c1c;
+      --yellowlight:#fff8e1;
+      --yellow:     #f57f17;
+      --bluelight:  #e3f2fd;
+      --blue:       #0d47a1;
+      --purplelight:#f3e5f5;
+      --purple:     #4a148c;
+      --teallight:  #e0f7fa;
+      --teal:       #006064;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    /* ===== COVER ===== */
+    .cover {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 40%, #0277bd 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 30px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 250px; height: 250px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .cover .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50px;
+      padding: 6px 20px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+    .cover h1 {
+      font-size: 2.2em;
+      font-weight: 800;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .cover h2 {
+      font-size: 1.2em;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+    .cover .meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cover .meta-item {
+      background: rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 10px 18px;
+      font-size: 13px;
+    }
+    .cover .meta-item span { display: block; font-weight: 700; font-size: 14px; margin-top: 3px; }
+
+    /* ===== TOC ===== */
+    .toc {
+      background: white;
+      margin: 30px auto;
+      max-width: 960px;
+      border-radius: 16px;
+      padding: 25px 30px;
+      box-shadow: 0 4px 20px rgba(26,35,126,0.08);
+      border-right: 5px solid var(--primary);
+    }
+    .toc h3 {
+      font-size: 1.2em;
+      color: var(--primary);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toc ol {
+      padding-right: 20px;
+    }
+    .toc ol li {
+      padding: 4px 0;
+      color: var(--accent1);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .toc ol li a {
+      color: var(--accent1);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .toc ol li a:hover { color: var(--primary); text-decoration: underline; }
+
+    /* ===== MAIN WRAPPER ===== */
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* ===== SECTION HEADER ===== */
+    .section-header {
+      border-radius: 14px;
+      padding: 18px 25px;
+      margin: 40px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-size: 1.2em;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .section-header .icon {
+      font-size: 1.4em;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      width: 42px; height: 42px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .sh-blue   { background: linear-gradient(135deg, #1565c0, #0288d1); }
+    .sh-purple { background: linear-gradient(135deg, #6a1b9a, #ab47bc); }
+    .sh-teal   { background: linear-gradient(135deg, #00695c, #26a69a); }
+    .sh-red    { background: linear-gradient(135deg, #b71c1c, #ef5350); }
+    .sh-orange { background: linear-gradient(135deg, #e65100, #ff7043); }
+    .sh-green  { background: linear-gradient(135deg, #1b5e20, #43a047); }
+    .sh-indigo { background: linear-gradient(135deg, #283593, #5c6bc0); }
+    .sh-pink   { background: linear-gradient(135deg, #880e4f, #e91e63); }
+    .sh-cyan   { background: linear-gradient(135deg, #006064, #00acc1); }
+
+    /* ===== SUBSECTION ===== */
+    .subsection {
+      background: white;
+      border-radius: 12px;
+      padding: 22px 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-top: 3px solid transparent;
+    }
+    .sub-blue   { border-top-color: #1565c0; }
+    .sub-purple { border-top-color: #6a1b9a; }
+    .sub-teal   { border-top-color: #00695c; }
+    .sub-red    { border-top-color: #b71c1c; }
+    .sub-orange { border-top-color: #e65100; }
+    .sub-green  { border-top-color: #1b5e20; }
+    .sub-indigo { border-top-color: #283593; }
+    .sub-pink   { border-top-color: #880e4f; }
+    .sub-cyan   { border-top-color: #006064; }
+
+    .subsection h4 {
+      font-size: 1.05em;
+      font-weight: 700;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px dashed var(--border);
+      color: var(--secondary);
+    }
+
+    /* ===== INFO BOX ===== */
+    .infobox {
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      display: flex;
+      gap: 12px;
+      font-size: 14px;
+    }
+    .infobox .ib-icon { font-size: 1.3em; flex-shrink: 0; margin-top: 1px; }
+    .ib-blue   { background: var(--bluelight);   border-right: 4px solid #1565c0; color: #0d1b5e; }
+    .ib-green  { background: var(--greenlight);  border-right: 4px solid #2e7d32; color: #1b3a1f; }
+    .ib-red    { background: var(--redlight);    border-right: 4px solid #c62828; color: #5c0000; }
+    .ib-yellow { background: var(--yellowlight); border-right: 4px solid #f9a825; color: #4a2c00; }
+    .ib-purple { background: var(--purplelight); border-right: 4px solid #6a1b9a; color: #2d0048; }
+    .ib-teal   { background: var(--teallight);   border-right: 4px solid #006064; color: #003033; }
+
+    /* ===== LIST STYLES (SAFARI & MOBILE SAFE) ===== */
+    .list-styled {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0;
+    }
+    .list-styled li {
+      padding: 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      border-bottom: 1px dotted #e8eaf6;
+    }
+    .list-styled li:last-child { border-bottom: none; }
+    .list-styled li::before {
+      content: '◈';
+      color: var(--accent1);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .list-styled.green li::before  { color: #2e7d32; }
+    .list-styled.red li::before    { color: #c62828; }
+    .list-styled.purple li::before { color: #6a1b9a; }
+    .list-styled.teal li::before   { color: #006064; }
+    .list-styled.orange li::before { color: #e65100; }
+
+    /* wrapper span for safari/mobile alignment fix */
+    .li-content {
+      flex: 1;
+      display: inline;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    /* ===== KEY-VALUE ROW (SAFARI & MOBILE SAFE) ===== */
+    .kv-row {
+      padding: 8px 0;
+      font-size: 14px;
+      border-bottom: 1px dotted #e0e4f8;
+      line-height: 1.8;
+    }
+    .kv-row:last-child { border-bottom: none; }
+    .kv-key {
+      font-weight: 700;
+      color: var(--secondary);
+      display: inline;
+      margin-left: 6px;
+    }
+    .kv-value {
+      color: var(--text);
+      display: inline;
+    }
+
+    /* ===== TAGS / PILLS ===== */
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      margin: 2px 2px;
+    }
+    .tag-blue   { background: #e3f2fd; color: #0d47a1; }
+    .tag-red    { background: #ffebee; color: #b71c1c; }
+    .tag-green  { background: #e8f5e9; color: #1b5e20; }
+    .tag-purple { background: #f3e5f5; color: #4a148c; }
+    .tag-orange { background: #fff3e0; color: #e65100; }
+    .tag-teal   { background: #e0f7fa; color: #006064; }
+    .tag-yellow { background: #fff8e1; color: #f57f17; }
+
+    /* ===== TABLE ===== */
+    .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 10px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    table thead tr {
+      background: var(--primary);
+      color: white;
+    }
+    table thead th {
+      padding: 12px 14px;
+      text-align: right;
+      font-weight: 700;
+    }
+    table tbody tr:nth-child(even) { background: #f5f7ff; }
+    table tbody tr:hover { background: #e8eaf6; }
+    table tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e0e4f8;
+      vertical-align: top;
+    }
+    table tbody tr:last-child td { border-bottom: none; }
+
+    /* ===== GRID 2-COL ===== */
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 14px 0;
+    }
+    @media(max-width:640px){ .grid2 { grid-template-columns: 1fr; } }
+
+    /* ===== MINI CARD ===== */
+    .mini-card {
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13.5px;
+    }
+    .mc-blue   { background: #e8eaf6; border-right: 4px solid #3949ab; }
+    .mc-green  { background: #e8f5e9; border-right: 4px solid #388e3c; }
+    .mc-red    { background: #ffebee; border-right: 4px solid #e53935; }
+    .mc-purple { background: #f3e5f5; border-right: 4px solid #8e24aa; }
+    .mc-orange { background: #fff3e0; border-right: 4px solid #f4511e; }
+    .mc-teal   { background: #e0f7fa; border-right: 4px solid #00838f; }
+    .mini-card h5 { font-weight: 700; margin-bottom: 8px; font-size: 14px; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+      margin-top: 60px;
+    }
+
+    strong.em  { color: #b71c1c; }
+    strong.em2 { color: #1565c0; }
+    strong.em3 { color: #2e7d32; }
+    strong.em4 { color: #6a1b9a; }
+
+    /* ===== سیستم تعاملی یادداشت‌های درون‌متنی مینیاتوری ===== */
+    .note-marker {
+      background-color: #ffd54f !important;
+      border: 1px solid #ffb300 !important;
+      color: #000 !important;
+      border-radius: 4px !important;
+      cursor: pointer !important;
+      padding: 1px 4px !important;
+      margin: 0 3px !important;
+      font-size: 11px !important;
+      user-select: none !important;
+      display: inline-block !important;
+      vertical-align: middle !important;
+      font-weight: bold !important;
+      position: relative;
+      animation: notePulse 2s infinite;
+    }
+    @keyframes notePulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    /* کدهای CSS جهت نمایش یادداشت در نمایشگر فایل آفلاین iOS */
+    .note-tooltip {
+      display: none;
+      position: absolute;
+      bottom: 125%;
+      right: 0;
+      background: #37474f;
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      min-width: 180px;
+      max-width: 250px;
+      z-index: 1000;
+      white-space: normal;
+      line-height: 1.5;
+      font-weight: normal;
+      text-align: right;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+    .note-marker:hover .note-tooltip, .note-marker:active .note-tooltip {
+      display: block !important;
+    }
+
+    /* ===== ساختار پنجره مودال مدیریت یادداشت‌ها ===== */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(26, 35, 126, 0.5);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      direction: rtl;
+    }
+    .modal-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      border-top: 5px solid var(--primary);
+    }
+    .modal-card h4 {
+      margin-bottom: 14px;
+      color: var(--primary);
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .modal-textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      resize: none;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      font-size: 13px;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-danger { background: var(--red); color: white; }
+    .btn-secondary { background: #eceff1; color: #37474f; }
+
+    /* ===== نوار ابزار تعاملی انتهای صفحه ===== */
+    #highlight-panel {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+      border-radius: 50px;
+      padding: 10px 20px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid var(--primary);
+      direction: rtl;
+      width: max-content;
+      max-width: 95%;
+    }
+    #highlight-panel span {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .hl-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    .hl-btn:hover { transform: scale(1.15); }
+    .hl-btn-yellow { background-color: #fff59d; }
+    .hl-btn-green  { background-color: #c8e6c9; }
+    .hl-btn-blue   { background-color: #bbdefb; }
+    .hl-btn-pink   { background-color: #f8bbd0; }
+    .panel-action-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .panel-action-btn-red { background: var(--red); }
+  </style>
+</head>
+<body>
+
+<!-- ===================== COVER ===================== -->
+<div class="cover">
+  <div class="badge">دانشگاه علوم پزشکی آزاد اسلامی یزد</div>
+  <h1>مقدمات بیماری‌های خون و سیستم هماتوپوئیتیک</h1>
+  <div class="meta">
+    <div class="meta-item">استاد مدرس: <span>دکتر مرتضوی‌زاده</span></div>
+    <div class="meta-item">تهیه کننده: <span>احمدرضاعبداللهی پور</span></div>
+    <div class="meta-item">برای دریافت فایل های بیشتر به بات تلگرامی مراجعه کنید
+                        
+<a href="https://t.me/Medical_house_bot" target="_blank" style="
+    display: inline-block;
+    padding: 5px 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Tahoma, sans-serif;
+    font-weight: bold;">
+    🤖 شروع گفتگو با بات
+</a></div>
+  </div>
+</div>
+
+<!-- ===================== TOC ===================== -->
+<div class="toc">
+  <h3>📋 فهرست مطالب درسنامه</h3>
+  <ol>
+    <li><a href="#sec1">کلیات سیستم هماتوپوئیتیک و اجزای خون</a></li>
+    <li><a href="#sec2">فیزیولوژی خون‌سازی جنینی و پس از تولد (Ontogeny of Hematopoiesis)</a></li>
+    <li><a href="#sec3">هموگلوبین‌های جنینی و نوزادی و اهمیت بالینی در تشخیص بیماری‌ها</a></li>
+    <li><a href="#sec4">ساختار، سلولاریته و بیوپسی مغز استخوان (Bone Marrow Examination)</a></li>
+    <li><a href="#sec5">رده‌بندی سلول‌های بنیادی (Stem Cells) و مراحل تمایز سلولی</a></li>
+    <li><a href="#sec6">اریتروپوئیز (Erythropoiesis) و مکانیسم‌های تنظیمی هورمون اریتروپوئیتین (EPO)</a></li>
+    <li><a href="#sec7">بیولوژی رتیکولوسیت‌ها و ارزش بالینی آن‌ها</a></li>
+    <li><a href="#sec8">لوکوپوئیز (Leukopoiesis) و فاکتورهای محرک کلونی (CSFs)</a></li>
+    <li><a href="#sec9">مگاکاریوپوئیز (Megakaryopoiesis) و بیولوژی پلاکت‌ها</a></li>
+    <li><a href="#sec10">جدول خلاصه مقادیر مرجع و طول عمر سلول‌های خون محیطی</a></li>
+  </ol>
+</div>
+
+<!-- ===================== MAIN CONTENT ===================== -->
+<div class="main">
+
+  <!-- SECTION 1 -->
+  <div id="sec1" class="section-header sh-blue">
+    <div class="icon">🩸</div>
+    <div>۱. کلیات سیستم هماتوپوئیتیک و اجزای خون</div>
+  </div>
+
+  <div class="subsection sub-blue">
+    <h4>ویژگی‌های عمومی سیستم خون‌ساز</h4>
+    <p>سیستم هماتوپوئیتیک (Hematopoietic System) یا سیستم خون‌ساز، با توجه به حجم زیاد جریان خون و ارتباط مستقیم با ارگان‌های بزرگ شامل <strong class="em2">طحال، کبد و مغز استخوان</strong>، یکی از بزرگترین و فعال‌ترین سیستم‌های آناتومیک و فیزیولوژیک بدن انسان محسوب می‌شود.</p>
+
+    <div class="infobox ib-blue">
+      <span class="ib-icon">💡</span>
+      <div><strong>نکته کلیدی استاد:</strong> برخلاف اکثر ارگان‌های بدن (مانند سیستم قلبی-عروقی که با افزایش سن دچار افت کارایی فیزیولوژیک شده و مثلا کسر تزریقی یا EF قلبی کاهش می‌یابد)، سیستم هماتوپوئیتیک به دلیل داشتن <strong class="em3">ظرفیت ذخیره (Reserve Capacity) بسیار بالا</strong>، در سنین بالا افت کارایی چندانی پیدا نمی‌کند. بنابراین افت بیش از حد گلبول‌های قرمز در افراد مسن را نباید به حساب "آنمی فیزیولوژیک پیری" گذاشت و حتماً نیاز به بررسی پاتولوژیک دارد.</div>
+    </div>
+
+    <h4 style="margin-top: 20px;">اجزای تشکیل‌دهنده خون محیطی</h4>
+    <p>خون از دو جزء اصلی تشکیل شده است:</p>
+    <div class="grid2">
+      <div class="mini-card mc-blue">
+        <h5>۱. جزء پلاسمایی (۵۵٪ حجم خون)</h5>
+        <p>بخش مایع خون که شامل پروتئین‌های خونی است. <strong class="em2">آلبومین (Albumin)</strong> عمده‌ترین و فراوان‌ترین پروتئین پلاسما می‌باشد که مسئول اصلی حفظ فشار انکوتیک خون است.</p>
+      </div>
+      <div class="mini-card mc-teal">
+        <h5>۲. جزء سلولی (۴۵٪ حجم خون)</h5>
+        <p>حاوی سلول‌های خونی شامل گلبول‌های قرمز (فراوان‌ترین)، گلبول‌های سفید و پلاکت‌ها (کوچک‌ترین عناصر سلولی خون که فاقد هسته هستند).</p>
+      </div>
+    </div>
+
+    <h4>بررسی نقش اجزای سلولی خون</h4>
+    <ul class="list-styled teal">
+      <li><span class="li-content"><strong class="em2">گلبول قرمز (RBC / Erythrocyte):</strong> نقش اصلی در انتقال گازهای تنفسی O<sub>2</sub> و CO<sub>2</sub> بین ریه و بافت‌ها.</span></li>
+      <li><span class="li-content"><strong class="em2">گلبول سفید (WBC / Leukocyte):</strong> سیستم دفاعی بدن. شامل ۵ زیررده:
+        <br>• <strong>PMN (Polymorphonuclear / Neutrophils):</strong> اکثر نقش دفاعی WBCها علیه عفونت‌های باکتریایی و فاگوسیتوز.
+        <br>• <strong>لنفوسیت‌ها (Lymphocytes):</strong> نقش اصلی در ایمنی هومورال (تولید پادتن توسط B-cell) و ایمنی سلولی (T-cell).
+        <br>• <strong>ائوزینوفیل‌ها (Eosinophils):</strong> ایمنی علیه انگل‌ها و شرکت در واکنش‌های ازدیاد حساسیت و آلرژیک.
+        <br>• <strong>بازوفیل‌ها (Basophils):</strong> آزادکننده هیستامین و واسطه‌های التهابی در واکنش‌های حساسیتی.
+        <br>• <strong>مونوسیت‌ها (Monocytes):</strong> سلول‌های دفاعی پیش‌ساز ماکروفاژها در بافت‌ها.
+      </span></li>
+      <li><span class="li-content"><strong class="em2">پلاکت (Platelet / Thrombocyte):</strong> نقش اصلی در هموستاز اولیه (Primary Hemostasis) و تشکیل لخته اولیه.</span></li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div id="sec2" class="section-header sh-purple">
+    <div class="icon">🌱</div>
+    <div>۲. فیزیولوژی خون‌سازی جنینی و پس از تولد (Ontogeny of Hematopoiesis)</div>
+  </div>
+
+  <div class="subsection sub-purple">
+    <h4>سیر تکاملی محل‌های خون‌سازی</h4>
+    <p>محل‌های هماتوپوئزیز در طی مراحل رشد جنینی تا بلوغ دچار تغییرات مشخصی می‌شوند:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>مرحله رشد</th>
+            <th>محل اصلی هماتوپوئزیز</th>
+            <th>توضیحات و نکات بالینی</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>هفته دوم جنینی</strong></td>
+            <td>کیسه زرده (Yolk Sac)</td>
+            <td>شروع اولیه هماتوپوئزیز جنینی (تولید اولیه اریتروبلاست‌های هسته‌دار).</td>
+          </tr>
+          <tr>
+            <td><strong>ماه ۳ تا ۶ جنینی (اواسط جنینی)</strong></td>
+            <td>کبد (Liver) و طحال (Spleen)</td>
+            <td>کبد فعال‌ترین ارگان خون‌ساز در دوران جنینی است.</td>
+          </tr>
+          <tr>
+            <td><strong>ماه چهارم جنینی به بعد</strong></td>
+            <td>مغز استخوان (Bone Marrow)</td>
+            <td>شروع فعالیت مغز استخوان. هنگام تولد، مغز استخوان مسئول اصلی هماتوپوئزیز است.</td>
+          </tr>
+          <tr>
+            <td><strong>زمان تولد تا ۶ ماهگی</strong></td>
+            <td>تقریباً تمام استخوان‌ها (Red Marrow)</td>
+            <td>خون‌سازی کبد به حداقل می‌رسد و از ۶ ماهگی به بعد کاملاً متوقف می‌شود.</td>
+          </tr>
+          <tr>
+            <td><strong>بزرگسالی</strong></td>
+            <td>اسکلت محوری (Axial Skeleton)</td>
+            <td>محدود به استخوان‌های لگن، دنده‌ها، جناغ (Sternum)، جمجمه (Skull) و مهره‌ها.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="infobox ib-purple">
+      <span class="ib-icon">⚠️</span>
+      <div><strong>هماتوپوئزیز خارج مغز استخوان (Extramedullary Hematopoiesis):</strong> بعد از تولد، در شرایط پاتولوژیک شدید مانند فیبروز مغز استخوان (Myelofibrosis) یا تخریب شدید آن، بدن ممکن است مجدداً خون‌سازی را به ارگان‌های دوران جنینی (کبد و طحال) منتقل کند که منجر به هپاتواسپلمومگالی شدید می‌گردد.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div id="sec3" class="section-header sh-teal">
+    <div class="icon">🧪</div>
+    <div>۳. هموگلوبین‌های جنینی و نوزادی و اهمیت بالینی</div>
+  </div>
+
+  <div class="subsection sub-teal">
+    <h4>ساختار زنجیره‌های هموگلوبین در مراحل مختلف رشد</h4>
+    <p>در طول دوران جنینی و نوزادی، ساختار زنجیره‌های گلوبین دچار سوییچینگ (Switching) می‌شود:</p>
+
+    <ul class="list-styled purple">
+      <li><span class="li-content"><strong class="em4">هموگلوبین ۱ Gower 1:</strong> دارای ساختار ζ<sub>2</sub>ε<sub>2</sub> (دو زنجیره زتا و دو زنجیره اپسیلون) بوده و در کیسه زرده (Yolk sac) ساخته می‌شود.</span></li>
+      <li><span class="li-content"><strong class="em4">هموگلوبین ۲ Gower 2:</strong> در ادامه دوره جنینی تولید شده و تمایلات اکسیژنی متفاوتی دارد.</span></li>
+      <li><span class="li-content"><strong class="em4">هموگلوبین جنینی (HbF / Fetal Hemoglobin):</strong> دارای ساختار α<sub>2</sub>γ<sub>2</sub> (دو زنجیره آلفا و دو زنجیره گاما) است. هموگلوبین اصلی دوران جنینی بوده و عمدتاً توسط کبد ساخته می‌شود.</span></li>
+    </ul>
+
+    <div class="mini-card mc-purple" style="margin-top: 15px;">
+      <h5>🎯 تمایل بالای HbF به اکسیژن و چالش تشخیصی تالاسمی</h5>
+      <p>هموگلوبین F تمایل بسیار بالایی برای اتصال به اکسیژن دارد تا بتواند اکسیژن را از جفت مادر دریافت کند. پس از تولد، میزان HbF به تدریج کاهش یافته و تا ۶ ماهگی به حداقل میزان خود (&lt;1%) می‌رسد.</p>
+      <p style="margin-top: 8px;"><strong class="em">نکته تشخیصی مهم:</strong> در برخی اختلالات ساخت هموگلوبین مانند <strong class="em">تالاسمی و بیماری سلول داسی‌کل (Sickle Cell)</strong>، میزان HbF به عنوان یک مکانیسم جبرانی بالا باقی می‌ماند. به همین دلیل، <strong>تشخیص دقیق تالاسمی در ۶ ماه اول تولد بسیار دشوار است</strong>؛ زیرا تمایز HbF نرمال نوزادی از HbF ناشی از تالاسمی در الکتروفورز هموگلوبین امکان‌پذیر نیست.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div id="sec4" class="section-header sh-orange">
+    <div class="icon">🦴</div>
+    <div>۴. ساختار، سلولاریته و بیوپسی مغز استخوان</div>
+  </div>
+
+  <div class="subsection sub-orange">
+    <h4>اجزای بافتی مغز استخوان</h4>
+    <p>بافت مغز استخوان شامل شبکه عروقی و عصبی، شبکه رتیکولر (ماتریس نگه‌دارنده)، بافت چربی (Fat cells) و جزایر خون‌سازی (<strong class="em2">Islands of Hematopoietic Cells</strong>) می‌باشد.</p>
+
+    <div class="grid2">
+      <div class="mini-card mc-orange">
+        <h5>نسبت میلوئید به اریتروئید (M:E Ratio)</h5>
+        <p>اکثریت سلول‌های خون‌ساز در مغز استخوان را سلول‌های رده میلوئید (گلبول‌های سفید) تشکیل می‌دهند. نسبت نرمال میلوئید به اریتروئید <strong class="em">۳ به ۱ (۷۵٪ به ۲۵٪)</strong> است. مگاکاریوسیت‌ها درصد بسیار ناچیزی (~۰/۱٪) را شامل می‌شوند.</p>
+      </div>
+      <div class="mini-card mc-red">
+        <h5>پارادوکس مغز استخوان vs خون محیطی</h5>
+        <p>چرا در مغز استخوان نسبت M:E برابر ۳:۱ به نفع WBCهاست، اما در خون محیطی تعداد RBCها (۵ میلیون) بسیار بیشتر از WBCها (۴ تا ۱۰ هزار) است؟</p>
+        <p style="margin-top:5px; font-weight:bold; color:var(--red);">علت: طول عمر بسیار کوتاه گلبول‌های سفید (چند ساعت تا چند روز) در مقایسه با طول عمر گلبول قرمز (۱۲۰ روز) است. مغز استخوان باید پروژنیتورهای WBC بسیار بیشتری تولید کند تا تعداد آن‌ها در خون ثابت بماند.</p>
+      </div>
+    </div>
+
+    <h4>محاسبه سلولاریته مغز استخوان (Bone Marrow Cellularity)</h4>
+    <p>در نوزادان تمام فضای مغز استخوان قرمز (Red Marrow) است. با افزایش سن، چربی جایگزین سلول‌های خون‌ساز شده و مغز استخوان زرد (Yellow Marrow) افزایش می‌یابد. سلولاریته با سن رابطه معکوس دارد:</p>
+    
+    <div class="infobox ib-yellow" style="text-align:center; font-size:16px; font-weight:bold;">
+      سلولاریته مغز استخوان (٪) = ۱۰۰ - سن
+    </div>
+
+    <h4>نمونه‌گیری از مغز استخوان (Aspiration & Biopsy)</h4>
+    <div class="kv-row">
+      <div class="kv-key">محل نمونه‌گیری در بزرگسالان:</div>
+      <div class="kv-value">خار خاصره پشتی فوقانی (<strong class="em2">Posterior Iliac Crest</strong>) یا استخوان جناغ (<strong class="em2">Sternum</strong>).</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-key">محل نمونه‌گیری در نوزادان/اطفال:</div>
+      <div class="kv-value">استخوان ساق پا (<strong class="em2">Tibia</strong>).</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-key">سوزن مخصوص نمونه‌گیری:</div>
+      <div class="kv-value"><strong class="em">سوزن جمشیدی (Jamshidi Needle)</strong> که توسط پزشک ایرانی (دکتر جمشیدی) اختراع شده و دارای دو بخش توخالی و ماندن سرتیز داخلی است.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div id="sec5" class="section-header sh-red">
+    <div class="icon">🔬</div>
+    <div>۵. رده‌بندی سلول‌های بنیادی (Stem Cells) و مراحل تمایز</div>
+  </div>
+
+  <div class="subsection sub-red">
+    <h4>دو ویژگی بنیادی سلول‌های بنیادی</h4>
+    <ul class="list-styled red">
+      <li><span class="li-content"><strong class="em">۱. قدرت خودنوسازی (Self-renewal):</strong> توانایی تقسیم و بازتولید سلول کاملاً مشابه خود.</span></li>
+      <li><span class="li-content"><strong class="em">۲. قدرت تمایز (Differentiation):</strong> توانایی تبدیل شدن به سلول‌های متفاوتی از بافت‌های مختلف.</span></li>
+    </ul>
+
+    <h4>تقسیم‌بندی سلول‌های بنیادی بر اساس پتانسیل تمایز</h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>نوع Stem Cell</th>
+            <th>دامنه و پتانسیل تمایز</th>
+            <th>مثال کاربردی</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Totipotent</strong></td>
+            <td>توانایی ایجاد هر سه لایه جنینی + جفت (Placenta) و جنین کامل.</td>
+            <td>سلول زیگوت تا مرحله بلاستومر اولیه.</td>
+          </tr>
+          <tr>
+            <td><strong>Pluripotent</strong></td>
+            <td>توانایی ایجاد هر سه لایه جنینی (اکتودرم، مزودرم، اندودرم) اما توانایی تشکیل جفت را ندارد.</td>
+            <td>سلول‌های توده داخلی بلاستوسیت.</td>
+          </tr>
+          <tr>
+            <td><strong>Multipotent</strong></td>
+            <td>فقط توانایی ایجاد سلول‌های یک رده خاص بافتی را دارد.</td>
+            <td>سلول بنیادی خون‌ساز (<strong class="em2">Hematopoietic Stem Cell - HSC</strong>).</td>
+          </tr>
+          <tr>
+            <td><strong>Oligopotential</strong></td>
+            <td>تمایز محدود به چند نوع سلول خاص.</td>
+            <td>پیش‌سازهای مشترک میلوئیدی/لنفوئیدی.</td>
+          </tr>
+          <tr>
+            <td><strong>Unipotential</strong></td>
+            <td>تنها توانایی تبدیل به یک نوع سلول تکامل‌یافته خاص را دارد.</td>
+            <td>پیش‌سازهای اختصاصی اریتروئید (CFU-E).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="infobox ib-red">
+      <span class="ib-icon">⚠️</span>
+      <div><strong>نکته مورفولوژیک بسیار مهم:</strong> سلول‌های بنیادی (Stem Cell) و سلول‌های پیش‌ساز اولیه (Progenitor cells) زیر میکروسکوپ نوری <strong>از نظر ظاهری قابل تفکیک از لنفوسیت‌های کوچک نیستند!</strong> (یک سلول گرد با هسته گرد و سیتوپلاسم اندک). اولین سلول قابل تشخیص مورفولوژیک در رده لنفوئیدی <strong class="em4">لنفو‌بلاست (Lymphoblast)</strong> و در رده میلوئیدی <strong class="em2">میلوبلاست (Myeloblast)</strong> و <strong class="em">اریتروبلاست (Erythroblast)</strong> می‌باشد.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div id="sec6" class="section-header sh-green">
+    <div class="icon">🔴</div>
+    <div>۶. اریتروپوئیز (Erythropoiesis) و تنظیم هورمونی EPO</div>
+  </div>
+
+  <div class="subsection sub-green">
+    <h4>مراحل سیر تکاملی گلبول قرمز (تنها ۵ تا ۷ روز)</h4>
+    <p>پروسه ساخت گلبول قرمز ۵ تا ۷ روز طول می‌کشد. مراحل تکوین به ترتیب زیر است:</p>
+    
+    <div class="infobox ib-green" style="font-size:13px; line-height:1.7;">
+      <strong>Proerythroblast</strong> ➔ <strong>Basophilic Erythroblast</strong> ➔ <strong>Polychromatic Erythroblast</strong> ➔ <strong>Orthochromatic Erythroblast (Normoblast)</strong> ➔ <strong>Polychromatic Erythrocyte (Reticulocyte)</strong> ➔ <strong>Mature Erythrocyte (RBC)</strong>
+    </div>
+
+    <ul class="list-styled green">
+      <li><span class="li-content"><strong>Proerythroblast:</strong> سلول گرد با هسته گرد، سیتوپلاسم شدیداً بازوفیلیک (آبی) بدون گرانول و هاله روشن اطراف هسته (اجسام گلژی).</span></li>
+      <li><span class="li-content"><strong>تغییر رنگ سیتوپلاسم:</strong> به تدریج با سنتز هموگلوبین (Hemoglobinization)، رنگ سیتوپلاسم از آبی/بنفش به نارنجی تغییر می‌یابد.</span></li>
+      <li><span class="li-content"><strong>خروج هسته (Enucleation):</strong> در مرحله نورموبلاست، هسته خروج یافته و سلول وارد مرحله <strong class="em3">رتیکولوسیت</strong> می‌شود.</span></li>
+      <li><span class="li-content"><strong>مورفولوژی Biconcave:</strong> گلبول قرمز بالغ دیسک مقعرالطرفین است. این شکل مهندسی‌شده باعث افزایش نسبت سطح به حجم جهت تبادل بهینه O<sub>2</sub> / CO<sub>2</sub> و انعطاف‌پذیری بالا برای عبور از مویرگ‌های مویین می‌شود.</span></li>
+    </ul>
+
+    <h4 style="margin-top:20px;">تنظیم هورمونی اریتروپوئیز توسط اریتروپوئیتین (EPO)</h4>
+    <p>محرک اصلی تولید RBC، هایپوکسی بافتی (Tissue Hypoxia) است که موجب ترشح هورمون <strong class="em3">اریتروپوئیتین (EPO)</strong> می‌گردد.</p>
+
+    <div class="grid2">
+      <div class="mini-card mc-green">
+        <h5>عوامل افزایش‌دهنده ترشح EPO و Hb</h5>
+        <ul style="padding-right:15px; font-size:13px;">
+          <li>هایپوکسی مزمن و زندگی در مناطق کوهستانی (ارتفاعات).</li>
+          <li>بیماری‌های ریوی و اختلالات تبادل گاز.</li>
+          <li>هورمون‌های آندروژن (تستوسترون) ➔ دلیل بالاتر بودن Hb در آقایان نسبت به خانم‌ها.</li>
+          <li>هورمون رشد (GH)، کاتکولامین‌ها و پروستاگلاندین‌ها.</li>
+          <li>تومورهای کلیوی (ترشح نابجای EPO و پرخونی / Polycythemia).</li>
+        </ul>
+      </div>
+      <div class="mini-card mc-red">
+        <h5>عوامل کاهش‌دهنده ترشح EPO و Hb</h5>
+        <ul style="padding-right:15px; font-size:13px;">
+          <li>هورمون استروژن در خانم‌ها.</li>
+          <li>داروهایی نظیر تئوفیلین (Theophylline).</li>
+          <li>بیماری‌های مزمن کلیوی (کلیه محل اصلی ترشح EPO است؛ پس از کلیه، کبد مقادیر کمتری ترشح می‌کند).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div id="sec7" class="section-header sh-indigo">
+    <div class="icon">🔍</div>
+    <div>۷. بیولوژی رتیکولوسیت‌ها و ارزش بالینی</div>
+  </div>
+
+  <div class="subsection sub-indigo">
+    <h4>ویژگی‌ها و اهمیت تشخیصی Reticulocyte</h4>
+    <p>رتیکولوسیت سلول نارس گلبول قرمز است که هسته ندارد ولی حاوی بقایای شبکه ریبوزومی و RNA است.</p>
+
+    <div class="kv-row">
+      <div class="kv-key">مدت زمان نهایی شدن:</div>
+      <div class="kv-value">رتیکولوسیت ۱ روز در مغز استخوان و ۱ روز در خون محیطی باقی مانده و سپس به RBC بالغ تبدیل می‌شود.</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-key">رنگ‌آمیزی اختصاصی:</div>
+      <div class="kv-value">با رنگ‌آمیزی حیاتی <strong class="em2">متیلن بلو (Methylene Blue)</strong>، رشته‌های ریبوزومی به صورت شبکه آبی‌رنگ قابل رویت هستند.</div>
+    </div>
+    <div class="kv-row">
+      <div class="kv-key">درصد نرمال در خون محیطی:</div>
+      <div class="kv-value"><strong class="em2">۱٪ تا ۲٪</strong> از کل گلبول‌های قرمز خون محیطی.</div>
+    </div>
+
+    <div class="infobox ib-teal">
+      <span class="ib-icon">📊</span>
+      <div><strong>ارزش بالینی شمارش رتیکولوسیت:</strong> درصد رتیکولوسیت شاخص مستقیمی از <strong>میزان فعالیت خون‌سازی مغز استخوان</strong> است.
+      <br>• <strong>افزایش درصد (Reticulocytosis):</strong> نشان‌دهنده پاسخ هایپربلاستیک مغز استخوان به خونریزی حاد یا همولیز.
+      <br>• <strong>کاهش درصد:</strong> نشان‌دهنده اپلازی، سرکوب مغز استخوان یا کمبود مواد اولیه (آهن، B12، فولات).</div>
+    </div>
+
+    <div class="infobox ib-red">
+      <span class="ib-icon">🚨</span>
+      <div><strong>RBC هسته‌دار (NRBC / Nucleated RBC):</strong> حضور گلبول قرمز هسته‌دار در خون محیطی فرد بالغ <strong>کاملاً غیرطبیعی (Abnormal)</strong> بوده و نشان‌دهنده آسیب شدید مغز استخوان، استرس شدید یا هماتوپوئزیز خارج مغز استخوان است.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div id="sec8" class="section-header sh-pink">
+    <div class="icon">🛡️</div>
+    <div>۸. لوکوپوئیز (Leukopoiesis) و فاکتورهای رشد</div>
+  </div>
+
+  <div class="subsection sub-pink">
+    <h4>سیر تکوین گلبول‌های سفید</h4>
+    <p>ساخت WBCها حدود <strong class="em">۷ تا ۱۰ روز</strong> در مغز استخوان طول می‌کشد، اما طول عمر آن‌ها در خون محیطی بسیار کوتاه و حدود <strong class="em">۶ تا ۸ ساعت</strong> است.</p>
+
+    <div class="kv-row">
+      <div class="kv-key">فاکتورهای رشد اختصاصی:</div>
+      <div class="kv-value"><strong class="em4">G-CSF</strong> (محرک کلونی گرانوئلوسیت) و <strong class="em4">GM-CSF</strong> (محرک کلونی گرانوئلوسیت-ماکروفاژ) که به صورت دارویی نوترکیب نیز در درمان نوتروپنی استفاده می‌شوند.</div>
+    </div>
+
+    <h4 style="margin-top:15px;">مراحل تکامل رده میلوئید (Granulopoiesis)</h4>
+    <div class="infobox ib-purple" style="font-size:13px;">
+      <strong>Myeloblast</strong> ➔ <strong>Promyelocyte</strong> ➔ <strong>Myelocyte</strong> ➔ <strong>Metamyelocyte</strong> ➔ <strong>Band Cell</strong> ➔ <strong>Mature Granulocyte (PMN / Eosinophil / Basophil)</strong>
+    </div>
+
+    <ul class="list-styled purple">
+      <li><span class="li-content"><strong class="em4">پرومیلوسیت (Promyelocyte):</strong> بزرگترین سلول رده میلوئید است که دارای گرانول‌های اولیه یا <strong class="em4">آزروفیلیک (Azurophilic granules)</strong> غیر‌اختصاصی می‌باشد. (توجه: بزرگترین سلول کل مغز استخوان مگاکاریوسیت است).</span></li>
+      <li><span class="li-content"><strong class="em4">متامیلوسیت و میلوسیت:</strong> مرحله ظهور گرانول‌های اختصاصی (نوتروفیل، ائوزینوفیل با گرانول نارنجی، بازوفیل با گرانول تیره).</span></li>
+    </ul>
+
+    <h4>توزیع دیفرانسیل WBCها بر حسب سن</h4>
+    <div class="grid2">
+      <div class="mini-card mc-blue">
+        <h5>در دوران نوزادی و کودکی</h5>
+        <p>درصد لنفوسیت‌ها بالاست و حدود <strong class="em2">۴۰٪ تا ۵۰٪</strong> کل گلبول‌های سفید را تشکیل می‌دهد.</p>
+      </div>
+      <div class="mini-card mc-purple">
+        <h5>در افراد بالغ</h5>
+        <p>درصد PMNها (نوتروفیل) بالاترین است (<strong class="em4">حدود ۷۰٪</strong>)، لنفوسیت‌ها حدود <strong class="em4">۲۰٪ تا ۳۰٪</strong>، و مابقی (زیر ۲٪ تا ۳٪) شامل ائوزینوفیل و بازوفیل است.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div id="sec9" class="section-header sh-cyan">
+    <div class="icon">🩸</div>
+    <div>۹. مگاکاریوپوئیز (Megakaryopoiesis) و تولید پلاکت</div>
+  </div>
+
+  <div class="subsection sub-cyan">
+    <h4>بیولوژی مگاکاریوسیت و ساخت پلاکت</h4>
+    <p>پلاکت‌ها قطعات سیتوپلاسمی ناشی از مگاکاریوسیت‌ها هستند که فاقد هسته بوده و نقش کلیدی در هموستاز اولیه دارند.</p>
+
+    <ul class="list-styled teal">
+      <li><span class="li-content"><strong class="em2">بزرگترین سلول مغز استخوان:</strong> مگاکاریوسیت بزرگترین سلول بافت مغز استخوان است که به دلیل شکل بزرگ و چند هسته‌ای (Endomitosis)، گاه با استئوکلاست اشتباه گرفته می‌شود.</span></li>
+      <li><span class="li-content"><strong class="em2">فراوانی در مغز استخوان:</strong> بسیار کم است! در هر ۱۰۰۰ سلول مغز استخوان تنها <strong class="em2">۱ تا ۵ سلول</strong> (حدود ۰/۱٪) مگاکاریوسیت دیده می‌شود.</span></li>
+      <li><span class="li-content"><strong class="em2">طول عمر پلاکت:</strong> حدود <strong class="em2">۵ تا ۷ روز</strong> در خون محیطی سیرکولاسیون دارد.</span></li>
+    </ul>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div id="sec10" class="section-header sh-blue">
+    <div class="icon">📋</div>
+    <div>۱۰. جدول خلاصه مقادیر مرجع و طول عمر سلول‌های خون محیطی</div>
+  </div>
+
+  <div class="subsection sub-blue">
+    <h4>جدول مقایسه‌ای عناصر سلولی خون محیطی</h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>عنصر سلولی</th>
+            <th>تعداد نرمال در هر میکرولیتر (mm<sup>3</sup>)</th>
+            <th>طول عمر در خون محیطی</th>
+            <th>وظیفه اصلی فیزیولوژیک</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>گلبول قرمز (RBC)</strong></td>
+            <td>۵ تا ۶ میلیون</td>
+            <td>۱۲۰ روز</td>
+            <td>انتقال اکسیژن و دی‌اکسید کربن</td>
+          </tr>
+          <tr>
+            <td><strong>گلبول سفید (WBC)</strong></td>
+            <td>۴,۰۰۰ تا ۱۰,۰۰۰</td>
+            <td>۶ تا ۸ ساعت (میلوئیدها)</td>
+            <td>دفاع ایمنی، فاگوسیتوز و تولید پادتن</td>
+          </tr>
+          <tr>
+            <td><strong>پلاکت (Platelet)</strong></td>
+            <td>۱۵۰,۰۰۰ تا ۴۵۰,۰۰۰</td>
+            <td>۵ تا ۷ روز</td>
+            <td>انعقاد اولیه و هموستاز عروقی</td>
+          </tr>
+          <tr>
+            <td><strong>رتیکولوسیت</strong></td>
+            <td>۱٪ تا ۲٪ کل RBCها</td>
+            <td>۱ تا ۲ روز</td>
+            <td>شاخص فعالیت خون‌سازی مغز استخوان</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div> <!-- END MAIN WRAPPER -->
+
+<!-- ===================== FOOTER ===================== -->
+<div class="footer">
+طراحی شده برای مرور سریع و تعاملی آمادگی آزمون‌ها
+</div>
+
+<!-- ===== نوار شناور ابزار چند پلتفرمی ===== -->
+<div id="highlight-panel">
+  <span>🖍️ ابزار مطالعه:</span>
+  <button class="hl-btn hl-btn-yellow" onclick="applyColorHighlight('#fff59d')" title="زرد"></button>
+  <button class="hl-btn hl-btn-green" onclick="applyColorHighlight('#c8e6c9')" title="سبز"></button>
+  <button class="hl-btn hl-btn-blue" onclick="applyColorHighlight('#bbdefb')" title="آبی"></button>
+  <button class="hl-btn hl-btn-pink" onclick="applyColorHighlight('#f8bbd0')" title="صورتی"></button>
+  <button class="panel-action-btn" onclick="addNoteAtSelection()">📝 یادداشت</button>
+  <button class="panel-action-btn" onclick="viewAllNotes()">🔍 لیست یادداشت‌ها</button>
+  <button class="panel-action-btn panel-action-btn-red" onclick="clearSelectedHighlight()">❌ پاک‌کردن</button>
+  <button class="panel-action-btn" style="background:#2e7d32;" onclick="exportModifiedHTML()">📥 خروجی گرفتن از فایل</button>
+</div>
+
+<!-- پنجره مودال ثبت/ویرایش یادداشت -->
+<div class="modal-overlay" id="note-edit-modal">
+  <div class="modal-card">
+    <h4 id="modal-title">ثبت یادداشت جدید در این محل</h4>
+    <textarea class="modal-textarea" id="modal-note-input" placeholder="نکته مهم کلاسی خود را جهت مرور سریع بنویسید..."></textarea>
+    <div class="modal-actions">
+      <button class="btn btn-primary" onclick="saveNoteChanges()">💾 ذخیره تغییرات</button>
+      <button class="btn btn-danger" id="btn-delete-note" onclick="deleteActiveNote()">❌ حذف یادداشت</button>
+      <button class="btn btn-secondary" onclick="closeNoteModal()">انصراف</button>
+    </div>
+  </div>
+</div>
+
+<!-- پنجره مودال لیست همه‌ی یادداشت‌ها -->
+<div class="modal-overlay" id="all-notes-modal">
+  <div class="modal-card" style="max-height: 80%; overflow-y: auto; max-width: 600px;">
+    <h4>📋 تمام یادداشت‌های ثبت‌شده شما</h4>
+    <div id="all-notes-list" style="margin-bottom: 20px;">
+      <!-- لیست پویا به صورت خودکار پر خواهد شد -->
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" onclick="closeAllNotesModal()">بستن پنجره</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+  const storageStateKey = "hematology_session1_6_interactive_state";
+  let savedRange = null; 
+  let activeMarker = null;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    loadPageState();
+  });
+
+  function savePageState() {
+    const mainHTML = document.querySelector('.main').innerHTML;
+    localStorage.setItem(storageStateKey, mainHTML);
+  }
+
+  function loadPageState() {
+    const savedHTML = localStorage.getItem(storageStateKey);
+    if (savedHTML) {
+      document.querySelector('.main').innerHTML = savedHTML;
+    }
+  }
+
+  function applyColorHighlight(colorHex) {
+    const selection = window.getSelection();
+    if (!selection.rangeCount || selection.isCollapsed) {
+      alert("لطفاً ابتدا متنی از جزوه را با ماوس یا لمس طولانی انتخاب کنید.");
+      return;
+    }
+
+    const main = document.querySelector('.main');
+    const originalEditable = main.contentEditable;
+    
+    main.contentEditable = "true";
+    
+    try {
+      document.execCommand("styleWithCSS", false, true);
+      document.execCommand("backColor", false, colorHex);
+    } catch (e) {
+      console.error("خطای هایلایت:", e);
+    }
+    
+    main.contentEditable = originalEditable;
+    selection.removeAllRanges();
+    savePageState();
+  }
+
+  function clearSelectedHighlight() {
+    applyColorHighlight('transparent');
+  }
+
+  function addNoteAtSelection() {
+    const selection = window.getSelection();
+    if (!selection.rangeCount || selection.isCollapsed) {
+      alert("لطفاً ابتدا بخشی از متن را با کشیدن انگشت یا ماوس انتخاب کنید تا یادداشت به آنجا متصل شود.");
+      return;
+    }
+
+    savedRange = selection.getRangeAt(0).cloneRange();
+    
+    activeMarker = null; 
+    document.getElementById("modal-title").innerText = "ثبت یادداشت جدید در این محل";
+    document.getElementById("modal-note-input").value = "";
+    document.getElementById("btn-delete-note").style.display = "none";
+    document.getElementById("note-edit-modal").style.display = "flex";
+  }
+
+  function saveNoteChanges() {
+    const text = document.getElementById("modal-note-input").value.trim();
+    if (!text) {
+      alert("لطفاً متن یادداشت را وارد کنید.");
+      return;
+    }
+
+    if (activeMarker === null) {
+      if (savedRange) {
+        const marker = document.createElement("span");
+        marker.className = "note-marker";
+        marker.setAttribute("data-note", text);
+        marker.innerHTML = `📝<span class="note-tooltip">${escapeHTML(text)}</span>`;
+        marker.contentEditable = "false";
+        
+        try {
+          savedRange.collapse(false);
+          savedRange.insertNode(marker);
+        } catch (e) {
+          console.error("Error inserting marker:", e);
+          alert("امکان درج یادداشت در این بخش به دلیل تداخل تگ‌ها وجود ندارد. لطفا متن ساده‌تری را انتخاب کنید.");
+        }
+        savedRange = null;
+      } else {
+        alert("محدوده متن انتخاب شده معتبر نیست. لطفاً مجدداً متن را انتخاب کنید.");
+        return;
+      }
+    } else {
+      activeMarker.setAttribute("data-note", text);
+      activeMarker.innerHTML = `📝<span class="note-tooltip">${escapeHTML(text)}</span>`;
+    }
+
+    closeNoteModal();
+    savePageState();
+  }
+
+  function deleteActiveNote() {
+    if (activeMarker && confirm("آیا مایل به حذف این یادداشت هستید؟")) {
+      activeMarker.remove();
+      closeNoteModal();
+      savePageState();
+    }
+  }
+
+  function closeNoteModal() {
+    document.getElementById("note-edit-modal").style.display = "none";
+    activeMarker = null;
+    savedRange = null;
+  }
+
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("note-marker")) {
+      activeMarker = e.target;
+      const savedText = activeMarker.getAttribute("data-note") || "";
+      document.getElementById("modal-title").innerText = "مشاهده و ویرایش یادداشت";
+      document.getElementById("modal-note-input").value = savedText;
+      document.getElementById("btn-delete-note").style.display = "inline-block";
+      document.getElementById("note-edit-modal").style.display = "flex";
+    }
+  });
+
+  function viewAllNotes() {
+    const markers = document.querySelectorAll(".note-marker");
+    const listContainer = document.getElementById("all-notes-list");
+    listContainer.innerHTML = "";
+
+    if (markers.length === 0) {
+      listContainer.innerHTML = '<p style="text-align:center; color:var(--muted); font-size:14px; padding:20px 0;">هیچ یادداشتی در کل متن ثبت نشده است.</p>';
+      document.getElementById("all-notes-modal").style.display = "flex";
+      return;
+    }
+
+    markers.forEach((marker, index) => {
+      const noteText = marker.getAttribute("data-note") || "";
+      const context = marker.previousSibling ? marker.previousSibling.textContent.slice(-35) : "...";
+      
+      const card = document.createElement("div");
+      card.className = "mini-card mc-blue";
+      card.style.marginBottom = "12px";
+      card.innerHTML = `
+        <div style="font-size:11px; color:var(--muted); margin-bottom:5px;">یادداشت شماره ${index + 1} (متن مجاور: "...${escapeHTML(context)}")</div>
+        <div style="font-weight:bold; font-size:14px; line-height:1.6; white-space:pre-wrap; color:var(--text);">${escapeHTML(noteText)}</div>
+        <div style="margin-top:10px; display:flex; gap:8px;">
+          <button onclick="scrollToMarker(${index})" class="tag tag-blue" style="border:none; cursor:pointer; padding:4px 10px;">🔍 پرش به محل یادداشت</button>
+          <button onclick="deleteMarkerFromList(${index})" class="tag tag-red" style="border:none; cursor:pointer; padding:4px 10px;">❌ حذف</button>
+        </div>
+      `;
+      listContainer.appendChild(card);
+    });
+
+    document.getElementById("all-notes-modal").style.display = "flex";
+  }
+
+  window.scrollToMarker = function(index) {
+    const markers = document.querySelectorAll(".note-marker");
+    if (markers[index]) {
+      closeAllNotesModal();
+      markers[index].scrollIntoView({ behavior: "smooth", block: "center" });
+      
+      const originalBg = markers[index].style.backgroundColor;
+      markers[index].style.backgroundColor = "#ff5252";
+      markers[index].style.transform = "scale(1.4)";
+      
+      setTimeout(() => {
+        markers[index].style.backgroundColor = originalBg;
+        markers[index].style.transform = "scale(1)";
+      }, 1500);
+    }
+  };
+
+  window.deleteMarkerFromList = function(index) {
+    if (confirm("آیا مایل به حذف این یادداشت هستید؟")) {
+      const markers = document.querySelectorAll(".note-marker");
+      if (markers[index]) {
+        markers[index].remove();
+        savePageState();
+        viewAllNotes(); 
+      }
+    }
+  };
+
+  function exportModifiedHTML() {
+    const docClone = document.cloneNode(true);
+    const currentMainHTML = document.querySelector('.main').innerHTML;
+    docClone.querySelector('.main').innerHTML = currentMainHTML;
+    
+    const htmlString = '<!DOCTYPE html>\n' + docClone.documentElement.outerHTML;
+    
+    const blob = new Blob([htmlString], { type: "text/html;charset=utf-8" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "hematology_sessions_1_6_interactive_output.html";
+    link.click();
+  }
+
+  function closeAllNotesModal() {
+    document.getElementById("all-notes-modal").style.display = "none";
+  }
+
+  function escapeHTML(str) {
+    return str.replace(/[&<>'"]/g, 
+      tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+    );
+  }
+</script>
+
+</body>
+</html>
